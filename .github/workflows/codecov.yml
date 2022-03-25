@@ -23,4 +23,4 @@ jobs:
       - name: Test
         uses: actions/checkout@v1
       - name: Build and Test
-        run:  xcodebuild test -workspace 'AmazonChimeSDK.workspace' -scheme AmazonChimeSDKPods -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.3' build test
+        run:  xcodebuild test -workspace 'AmazonChimeSDK.xcworkspace' -scheme AmazonChimeSDKPods -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.3' build test
