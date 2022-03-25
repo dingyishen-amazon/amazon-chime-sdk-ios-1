@@ -22,6 +22,13 @@ jobs:
     steps:
       - name: Test
         uses: actions/checkout@v1
+        
+      - name: Install Dependencies
+        run: |
+          cd AmazonChimeSDK
+          pod install --repo-update
+        shell: bash
+        
       - name: Build and Test
         working-directory: ./AmazonChimeSDK
         run:  xcodebuild test -workspace 'AmazonChimeSDK.xcworkspace' -scheme AmazonChimeSDKPods -destination 'platform=iOS Simulator,name=iPhone 11,OS=15.2' -enableCodeCoverage YES build test
