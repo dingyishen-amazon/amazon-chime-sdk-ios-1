@@ -351,7 +351,6 @@
 		712107A827EE274B0089A439 /* DefaultEventReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007BDA026334BA800A15BB6 /* DefaultEventReporter.swift */; };
 		712107A927EE274B0089A439 /* VolumeLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D50C323FC732300D8F18C /* VolumeLevel.swift */; };
 		712107AA27EE274B0089A439 /* IngestionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007BDBA26335E5D00A15BB6 /* IngestionEvent.swift */; };
-		712107AC27EE274B0089A439 /* AmazonChimeSDKMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ADEAFA024293B2700801EA5 /* AmazonChimeSDKMedia.framework */; };
 		712107AD27EE274B0089A439 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE1323823EB2C1E00BF5997 /* AVFoundation.framework */; };
 		712107AF27EE274B0089A439 /* exported_symbols in Resources */ = {isa = PBXBuildFile; fileRef = F86CB7402411B9A6004FD82F /* exported_symbols */; };
 		7C0D1BEB241ACC7B00280031 /* IntervalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D1BCB241ACC7B00280031 /* IntervalScheduler.swift */; };
@@ -767,7 +766,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				712107AC27EE274B0089A439 /* AmazonChimeSDKMedia.framework in Frameworks */,
 				712107AD27EE274B0089A439 /* AVFoundation.framework in Frameworks */,
 				B0E6C7D16A4C61269AE226E6 /* Pods_AmazonChimeSDKPods.framework in Frameworks */,
 			);
@@ -1405,7 +1403,6 @@
 				5A8C9DE1B4E4A22BE2C108F6 /* Pods-AmazonChimeSDKPods.debug.xcconfig */,
 				5FC42CFEB6EE2DF77690B9A5 /* Pods-AmazonChimeSDKPods.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
