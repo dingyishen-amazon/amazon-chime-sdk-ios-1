@@ -20,6 +20,20 @@
                ReferencedContainer = "container:AmazonChimeSDK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5A15822523C4020D0099F8FA"
+               BuildableName = "AmazonChimeSDKTests.xctest"
+               BlueprintName = "AmazonChimeSDKTests"
+               ReferencedContainer = "container:AmazonChimeSDK.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -33,9 +47,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5A15822523C4020D0099F8FA"
-               BuildableName = "AmazonChimeSDKTests.xctest"
-               BlueprintName = "AmazonChimeSDKTests"
+               BlueprintIdentifier = "711EF6F827F2639200C2A812"
+               BuildableName = "AmazonChimeSDKPodsTests.xctest"
+               BlueprintName = "AmazonChimeSDKPodsTests"
                ReferencedContainer = "container:AmazonChimeSDK.xcodeproj">
             </BuildableReference>
          </TestableReference>
