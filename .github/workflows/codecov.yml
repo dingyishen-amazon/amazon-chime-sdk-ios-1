@@ -26,8 +26,6 @@ jobs:
       - name: Install Dependencies
         run: |
           cd AmazonChimeSDK
-          mockingbird download starter-pack
-          mockingbird install --sources AmazonChimeSDKPods --target AmazonChimeSDKTests
           pod install --repo-update
         shell: bash
         
