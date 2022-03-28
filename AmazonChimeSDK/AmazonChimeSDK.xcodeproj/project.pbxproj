@@ -251,9 +251,9 @@
 		711EF74C27F2639200C2A812 /* VolumeUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE76F1F24203A6E009C41FD /* VolumeUpdateTests.swift */; };
 		711EF74D27F2639200C2A812 /* DefautCameraCaptureSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E19904259E575C00AD4DAA /* DefautCameraCaptureSourceTests.swift */; };
 		711EF74E27F2639200C2A812 /* AmazonChimeSDKTests-AmazonChimeSDKMocks.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7CEAE89DD08E6E863FC8BE /* AmazonChimeSDKTests-AmazonChimeSDKMocks.generated.swift */; };
-		711EF75127F2639200C2A812 /* AmazonChimeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A15821D23C4020D0099F8FA /* AmazonChimeSDK.framework */; };
 		711EF75227F2639200C2A812 /* Mockingbird in Frameworks */ = {isa = PBXBuildFile; productRef = 711EF6FB27F2639200C2A812 /* Mockingbird */; };
 		711EF75327F2639200C2A812 /* Pods_AmazonChimeSDK_AmazonChimeSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7F4BD8B9ABBEF866163709 /* Pods_AmazonChimeSDK_AmazonChimeSDKTests.framework */; };
+		711EF75C27F2666000C2A812 /* AmazonChimeSDKPods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712107B327EE274B0089A439 /* AmazonChimeSDKPods.framework */; };
 		712106FA27EE274B0089A439 /* TranscriptLanguageWithScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5403538927D0C9F9007BABD7 /* TranscriptLanguageWithScore.swift */; };
 		712106FB27EE274B0089A439 /* TranscriptEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5403538727D0C9E9007BABD7 /* TranscriptEntity.swift */; };
 		712106FC27EE274B0089A439 /* EventSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C1FE92649D5CC00C9B919 /* EventSender.swift */; };
@@ -540,12 +540,12 @@
 			remoteGlobalIDString = 5A15821C23C4020D0099F8FA;
 			remoteInfo = AmazonChimeSDK;
 		};
-		711EF6FA27F2639200C2A812 /* PBXContainerItemProxy */ = {
+		711EF75A27F2664A00C2A812 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5A15821423C4020D0099F8FA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5A15821C23C4020D0099F8FA;
-			remoteInfo = AmazonChimeSDK;
+			remoteGlobalIDString = 712106F627EE274B0089A439;
+			remoteInfo = AmazonChimeSDKPods;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -854,7 +854,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				711EF75127F2639200C2A812 /* AmazonChimeSDK.framework in Frameworks */,
+				711EF75C27F2666000C2A812 /* AmazonChimeSDKPods.framework in Frameworks */,
 				711EF75227F2639200C2A812 /* Mockingbird in Frameworks */,
 				711EF75327F2639200C2A812 /* Pods_AmazonChimeSDK_AmazonChimeSDKTests.framework in Frameworks */,
 			);
@@ -1713,7 +1713,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				711EF6F927F2639200C2A812 /* PBXTargetDependency */,
+				711EF75B27F2664A00C2A812 /* PBXTargetDependency */,
 			);
 			name = AmazonChimeSDKPodsTests;
 			packageProductDependencies = (
@@ -2555,10 +2555,10 @@
 			target = 5A15821C23C4020D0099F8FA /* AmazonChimeSDK */;
 			targetProxy = 5A15822823C4020D0099F8FA /* PBXContainerItemProxy */;
 		};
-		711EF6F927F2639200C2A812 /* PBXTargetDependency */ = {
+		711EF75B27F2664A00C2A812 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5A15821C23C4020D0099F8FA /* AmazonChimeSDK */;
-			targetProxy = 711EF6FA27F2639200C2A812 /* PBXContainerItemProxy */;
+			target = 712106F627EE274B0089A439 /* AmazonChimeSDKPods */;
+			targetProxy = 711EF75A27F2664A00C2A812 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
