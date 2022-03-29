@@ -25,7 +25,8 @@ jobs:
         
       - name: AWS S3 Github Action
         run: |
-          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile jenkins-automated-test
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile jenkins-automated-test
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile jenkins-automated-test
           aws \
             --profile jenkins-automated-test \
             s3api get-object \
