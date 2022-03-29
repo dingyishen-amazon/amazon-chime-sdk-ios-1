@@ -23,6 +23,9 @@ jobs:
       - name: Test
         uses: actions/checkout@v1
         
+      - name: Mockingbird
+        run: which mockingbird
+        
       - name: Install Dependencies
         run: |
           cd AmazonChimeSDK
