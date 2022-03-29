@@ -33,6 +33,11 @@ jobs:
             --bucket amazon-chime-sdk-ios-internal \
             --key master/media/latest/AmazonChimeSDKMedia.tar.gz \
             AmazonChimeSDKMedia.tar.gz
+          tar -xzf AmazonChimeSDKMedia.tar.gz
+          cp -R ./AmazonChimeSDKMedia.framework ./AmazonChimeSDK
+          cd $./AmazonChimeSDK
+          mockingbird download starter-pack
+          mockingbird install --sources AmazonChimeSDK --target AmazonChimeSDKTests
           
           
 #         uses: keithweaver/aws-s3-github-action@v1.0.0
