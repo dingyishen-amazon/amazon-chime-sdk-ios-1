@@ -1963,7 +1963,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nmockingbird generate \\\n  --targets 'AmazonChimeSDK' \\\n  --outputs \"${SRCROOT}/MockingbirdMocks/AmazonChimeSDKTests-AmazonChimeSDKMocks.generated.swift\" \\\n  --support \"${SRCROOT}/MockingbirdSupport\"\n\n# Ensure mocks are generated prior to running Compile Sources\nrm -f '/tmp/Mockingbird-843A55A6-F172-40F8-AD36-AE309CDDCACD'\n";
+			shellScript = "set -e\n\nmockingbird generate \\\n  --targets 'AmazonChimeSDKPods' \\\n  --outputs \"${SRCROOT}/MockingbirdMocks/AmazonChimeSDKPodsTests-AmazonChimeSDKMocks.generated.swift\" \\\n  --support \"${SRCROOT}/MockingbirdSupport\"\n\n# Ensure mocks are generated prior to running Compile Sources\nrm -f '/tmp/Mockingbird-843A55A6-F172-40F8-AD36-AE309CDDCACD'\n";
 		};
 		712106F827EE274B0089A439 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

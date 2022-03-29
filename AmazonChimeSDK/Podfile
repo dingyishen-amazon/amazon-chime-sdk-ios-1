@@ -13,6 +13,5 @@ target 'AmazonChimeSDKPodsTests' do
   use_frameworks!
   # Pods for testing
   pod 'AmazonChimeSDKMedia-Bitcode', '0.15.2'
-  pod 'MockingbirdFramework', '0.15.0'
 end
 
