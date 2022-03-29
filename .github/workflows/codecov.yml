@@ -31,9 +31,9 @@ jobs:
           pod install --repo-update
         shell: bash
         
-      - name: Mockingbird
-        run: which mockingbird
-        shell: bash
+#       - name: Mockingbird
+#         run: which mockingbird
+#         shell: bash
         
       - name: Build and Test
         working-directory: ./AmazonChimeSDK
