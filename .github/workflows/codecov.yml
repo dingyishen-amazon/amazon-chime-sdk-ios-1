@@ -25,6 +25,7 @@ jobs:
         
       - name: Mockingbird
         run: which mockingbird
+        shell: bash
         
       - name: Install Dependencies
         run: |
