@@ -35,7 +35,7 @@ jobs:
             AmazonChimeSDKMedia.tar.gz
           tar -xzf AmazonChimeSDKMedia.tar.gz
           cp -R ./AmazonChimeSDKMedia.framework ./AmazonChimeSDK
-          cd $./AmazonChimeSDK
+          cd ./AmazonChimeSDK
           mockingbird download starter-pack
           mockingbird install --sources AmazonChimeSDK --target AmazonChimeSDKTests
           
