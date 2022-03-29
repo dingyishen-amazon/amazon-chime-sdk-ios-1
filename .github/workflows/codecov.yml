@@ -35,9 +35,9 @@ jobs:
             AmazonChimeSDKMedia.tar.gz
           tar -xzf AmazonChimeSDKMedia.tar.gz
           cp -R ./AmazonChimeSDKMedia.framework ./AmazonChimeSDK
-          cd ./AmazonChimeSDK
-          mockingbird download starter-pack
-          mockingbird install --sources AmazonChimeSDK --target AmazonChimeSDKTests
+ #         cd ./AmazonChimeSDK
+ #         mockingbird download starter-pack
+    #      mockingbird install --sources AmazonChimeSDK --target AmazonChimeSDKTests
           
           
 #         uses: keithweaver/aws-s3-github-action@v1.0.0
@@ -49,11 +49,11 @@ jobs:
 
       
         
-      - name: Install Dependencies
-        run: |
-          cd AmazonChimeSDK
-          pod install --repo-update
-        shell: bash
+#       - name: Install Dependencies
+#         run: |
+#           cd AmazonChimeSDK
+#           pod install --repo-update
+#         shell: bash
         
 #       - name: Mockingbird
 #         run: which mockingbird
@@ -62,10 +62,10 @@ jobs:
       - name: Build and Test
         working-directory: ./AmazonChimeSDK
         run: |
-          xcodebuild -scheme AmazonChimeSDKPods build
-          mockingbird download starter-pack
-          mockingbird install --sources AmazonChimeSDK --target AmazonChimeSDKPodsTests
-          xcodebuild test -workspace 'AmazonChimeSDK.xcworkspace' -scheme AmazonChimeSDKPods -destination 'platform=iOS Simulator,name=iPhone 11,OS=15.2' -enableCodeCoverage YES 
+          xcodebuild -project AmazonChimeSDK.xcodeproj -scheme AmazonChimeSDK build
+  #        mockingbird download starter-pack
+  #        mockingbird install --sources AmazonChimeSDK --target AmazonChimeSDKPodsTests
+   #       xcodebuild test -workspace 'AmazonChimeSDK.xcworkspace' -scheme AmazonChimeSDKPods -destination 'platform=iOS Simulator,name=iPhone 11,OS=15.2' -enableCodeCoverage YES 
         
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1.2.1
