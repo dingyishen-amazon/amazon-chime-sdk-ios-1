@@ -23,6 +23,14 @@ jobs:
       - name: Test
         uses: actions/checkout@v1
         
+      - name: AWS S3 Github Action
+        uses: keithweaver/aws-s3-github-action@v1.0.0
+        with:
+          command: cp
+          source: ./master/media/latest/AmazonChimeSDKMedia.tar.gz
+          destination: ./AmazonChimeSDKMedia.tar.gz
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+
       
         
       - name: Install Dependencies
