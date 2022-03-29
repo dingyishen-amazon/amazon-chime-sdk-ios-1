@@ -9,8 +9,9 @@ target 'AmazonChimeSDKPods' do
 
 end
 
-target 'AmazonChimeSDKTests' do
+target 'AmazonChimeSDKPodsTests' do
   # Pods for testing
   pod 'AmazonChimeSDKMedia-Bitcode', '0.15.2'
+  pod 'Mockingbird', '0.15.0'
 end
 
