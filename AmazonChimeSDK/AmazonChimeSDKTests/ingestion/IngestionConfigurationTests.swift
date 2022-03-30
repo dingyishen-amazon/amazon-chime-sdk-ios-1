@@ -18,6 +18,7 @@ class IngestionConfigurationTests: XCTestCase {
     private let flushIntervalMs = Int64(500)
     private let retryCountLimit = 2
 
+    
     func testIngestionConfigurationShouldBeInitialized() {
         let ingestionConfiguration = IngestionConfiguration(clientConfiguration: clientConfigurationMock,
                                                             ingestionUrl: ingestionUrl,
