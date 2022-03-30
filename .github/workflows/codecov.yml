@@ -62,13 +62,12 @@ jobs:
       - name: Build and Test
         working-directory: ./AmazonChimeSDK
         run: |
-         # export PATH=$PATH:/usr/local/bin
+          wget https://github.com/birdrides/mockingbird/releases/download/0.15.0/Mockingbird.zip
+          tar -xzf Mockingbird.zip
+          ./mockingbird download starter-pack
+          ./mockingbird install --sources AmazonChimeSDK --target AmazonChimeSDKTests
           xcodebuild build -project AmazonChimeSDK.xcodeproj -scheme AmazonChimeSDK -destination 'platform=iOS Simulator,name=iPhone 11'
-      - name: mockingbird
-        run: |
-          pwd
-          ls
-          which mockingbird
+
  #         xcodebuild test -project AmazonChimeSDK.xcodeproj -scheme AmazonChimeSDK -destination 'platform=iOS Simulator,name=iPhone 11' -enableCodeCoverage YES build test
   #        mockingbird download starter-pack
   #        mockingbird install --sources AmazonChimeSDK --target AmazonChimeSDKPodsTests
