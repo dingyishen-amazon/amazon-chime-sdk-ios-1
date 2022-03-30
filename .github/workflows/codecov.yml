@@ -34,7 +34,7 @@ jobs:
             --key master/media/latest/AmazonChimeSDKMedia.tar.gz \
             AmazonChimeSDKMedia.tar.gz
           tar -xzf AmazonChimeSDKMedia.tar.gz
-          cp -R ./AmazonChimeSDKMedia.xcframework ./AmazonChimeSDK
+          cp -R ./AmazonChimeSDKMedia.framework ./AmazonChimeSDK
  #         cd ./AmazonChimeSDK
  #         mockingbird download starter-pack
     #      mockingbird install --sources AmazonChimeSDK --target AmazonChimeSDKTests
@@ -63,7 +63,7 @@ jobs:
         working-directory: ./AmazonChimeSDK
         run: |
           ls
-          xcodebuild -project AmazonChimeSDK.xcodeproj -scheme AmazonChimeSDK build
+          xcodebuild -project AmazonChimeSDK.xcodeproj -scheme AmazonChimeSDK -destination 'platform=iOS Simulator,name=iPhone 11' build
   #        mockingbird download starter-pack
   #        mockingbird install --sources AmazonChimeSDK --target AmazonChimeSDKPodsTests
    #       xcodebuild test -workspace 'AmazonChimeSDK.xcworkspace' -scheme AmazonChimeSDKPods -destination 'platform=iOS Simulator,name=iPhone 11,OS=15.2' -enableCodeCoverage YES 
