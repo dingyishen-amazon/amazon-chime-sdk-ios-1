@@ -70,7 +70,7 @@ jobs:
             -project AmazonChimeSDK.xcodeproj \
             -scheme AmazonChimeSDK \
             -destination 'platform=iOS Simulator,name=iPhone 11' \
-            -skip-testing: "AmazonChimeSDKTests/SQLiteClientFileTests/testWriteShouldInsertMultipleItemsConcurrently" \
+            -skip-testing:"AmazonChimeSDKTests/SQLiteClientFileTests/testWriteShouldInsertMultipleItemsConcurrently" \
             -enableCodeCoverage YES \
             build test
 #          xcodebuild build -project AmazonChimeSDK.xcodeproj -scheme AmazonChimeSDK -destination 'platform=iOS Simulator,name=iPhone 11'
