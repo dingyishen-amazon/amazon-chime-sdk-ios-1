@@ -1,0 +1,509 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-module-flags: -target x86_64-apple-macos10.14 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Mockingbird
+import CoreGraphics
+import Dispatch
+import Foundation
+import Swift
+import XCTest
+@_hasMissingDesignatedInitializers public class ArgumentCaptor<ParameterType> : Mockingbird.ArgumentMatcher {
+  public var matcher: ParameterType {
+    get
+  }
+  public var allValues: [ParameterType] {
+    get
+  }
+  public var value: ParameterType? {
+    get
+  }
+  public init(weak: Swift.Bool = false)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ArgumentMatcher : Swift.CustomStringConvertible {
+  final public let description: Swift.String
+  @objc deinit
+}
+extension ArgumentMatcher : Swift.Equatable {
+  public static func == (lhs: Mockingbird.ArgumentMatcher, rhs: Mockingbird.ArgumentMatcher) -> Swift.Bool
+}
+public func parseMangledSwiftSymbol(_ mangled: Swift.String, isType: Swift.Bool = false) throws -> Mockingbird.SwiftSymbol
+public func parseMangledSwiftSymbol<C>(_ mangled: C, isType: Swift.Bool = false, symbolicReferenceResolver: ((Swift.Int32, Swift.Int) throws -> Mockingbird.SwiftSymbol)? = nil) throws -> Mockingbird.SwiftSymbol where C : Swift.Collection, C.Element == Swift.UnicodeScalar
+extension SwiftSymbol : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public func print(using options: Mockingbird.SymbolPrintOptions = .default) -> Swift.String
+}
+public struct SymbolPrintOptions : Swift.OptionSet {
+  public let rawValue: Swift.Int
+  public static let synthesizeSugarOnTypes: Mockingbird.SymbolPrintOptions
+  public static let displayDebuggerGeneratedModule: Mockingbird.SymbolPrintOptions
+  public static let qualifyEntities: Mockingbird.SymbolPrintOptions
+  public static let displayExtensionContexts: Mockingbird.SymbolPrintOptions
+  public static let displayUnmangledSuffix: Mockingbird.SymbolPrintOptions
+  public static let displayModuleNames: Mockingbird.SymbolPrintOptions
+  public static let displayGenericSpecializations: Mockingbird.SymbolPrintOptions
+  public static let displayProtocolConformances: Mockingbird.SymbolPrintOptions
+  public static let displayWhereClauses: Mockingbird.SymbolPrintOptions
+  public static let displayEntityTypes: Mockingbird.SymbolPrintOptions
+  public static let shortenPartialApply: Mockingbird.SymbolPrintOptions
+  public static let shortenThunk: Mockingbird.SymbolPrintOptions
+  public static let shortenValueWitness: Mockingbird.SymbolPrintOptions
+  public static let shortenArchetype: Mockingbird.SymbolPrintOptions
+  public static let showPrivateDiscriminators: Mockingbird.SymbolPrintOptions
+  public static let showFunctionArgumentTypes: Mockingbird.SymbolPrintOptions
+  public init(rawValue: Swift.Int)
+  public static let `default`: Mockingbird.SymbolPrintOptions
+  public static let simplified: Mockingbird.SymbolPrintOptions
+  public typealias Element = Mockingbird.SymbolPrintOptions
+  public typealias ArrayLiteralElement = Mockingbird.SymbolPrintOptions
+  public typealias RawValue = Swift.Int
+}
+public struct SwiftSymbol {
+  public let kind: Mockingbird.SwiftSymbol.Kind
+  public var children: [Mockingbird.SwiftSymbol]
+  public let contents: Mockingbird.SwiftSymbol.Contents
+  public enum Contents {
+    case none
+    case index(Swift.UInt64)
+    case name(Swift.String)
+  }
+  public init(kind: Mockingbird.SwiftSymbol.Kind, children: [Mockingbird.SwiftSymbol] = [], contents: Mockingbird.SwiftSymbol.Contents = .none)
+}
+extension SwiftSymbol {
+  public enum Kind {
+    case `class`
+    case `enum`
+    case `extension`
+    case `protocol`
+    case protocolSymbolicReference
+    case `static`
+    case `subscript`
+    case allocator
+    case anonymousContext
+    case anonymousDescriptor
+    case argumentTuple
+    case associatedConformanceDescriptor
+    case associatedType
+    case associatedTypeDescriptor
+    case associatedTypeGenericParamRef
+    case associatedTypeMetadataAccessor
+    case associatedTypeRef
+    case associatedTypeWitnessTableAccessor
+    case assocTypePath
+    case autoClosureType
+    case boundGenericClass
+    case boundGenericEnum
+    case boundGenericFunction
+    case boundGenericOtherNominalType
+    case boundGenericProtocol
+    case boundGenericStructure
+    case boundGenericTypeAlias
+    case builtinTypeName
+    case cFunctionPointer
+    case classMetadataBaseOffset
+    case constructor
+    case coroutineContinuationPrototype
+    case curryThunk
+    case deallocator
+    case declContext
+    case defaultArgumentInitializer
+    case defaultAssociatedConformanceAccessor
+    case defaultAssociatedTypeMetadataAccessor
+    case dependentAssociatedTypeRef
+    case dependentGenericConformanceRequirement
+    case dependentGenericLayoutRequirement
+    case dependentGenericParamCount
+    case dependentGenericParamType
+    case dependentGenericSameTypeRequirement
+    case dependentGenericSignature
+    case dependentGenericType
+    case dependentMemberType
+    case dependentPseudogenericSignature
+    case destructor
+    case didSet
+    case directMethodReferenceAttribute
+    case directness
+    case dispatchThunk
+    case dynamicAttribute
+    case dynamicSelf
+    case emptyList
+    case enumCase
+    case errorType
+    case escapingAutoClosureType
+    case existentialMetatype
+    case explicitClosure
+    case extensionDescriptor
+    case fieldOffset
+    case firstElementMarker
+    case fullTypeMetadata
+    case function
+    case functionSignatureSpecialization
+    case functionSignatureSpecializationParam
+    case functionSignatureSpecializationParamKind
+    case functionSignatureSpecializationParamPayload
+    case functionType
+    case genericPartialSpecialization
+    case genericPartialSpecializationNotReAbstracted
+    case genericProtocolWitnessTable
+    case genericProtocolWitnessTableInstantiationFunction
+    case genericSpecialization
+    case genericSpecializationNotReAbstracted
+    case genericSpecializationParam
+    case genericTypeMetadataPattern
+    case genericTypeParamDecl
+    case getter
+    case global
+    case globalGetter
+    case identifier
+    case implConvention
+    case implErrorResult
+    case implEscaping
+    case implFunctionAttribute
+    case implFunctionType
+    case implicitClosure
+    case implParameter
+    case implResult
+    case index
+    case infixOperator
+    case initializer
+    case inlinedGenericFunction
+    case inOut
+    case isSerialized
+    case iVarDestroyer
+    case iVarInitializer
+    case keyPathEqualsThunkHelper
+    case keyPathGetterThunkHelper
+    case keyPathHashThunkHelper
+    case keyPathSetterThunkHelper
+    case labelList
+    case lazyProtocolWitnessTableAccessor
+    case lazyProtocolWitnessTableCacheVariable
+    case localDeclName
+    case materializeForSet
+    case mergedFunction
+    case metaclass
+    case metatype
+    case metatypeRepresentation
+    case methodDescriptor
+    case methodLookupFunction
+    case modifyAccessor
+    case module
+    case moduleDescriptor
+    case nativeOwningAddressor
+    case nativeOwningMutableAddressor
+    case nativePinningAddressor
+    case nativePinningMutableAddressor
+    case noEscapeFunctionType
+    case nominalTypeDescriptor
+    case nonObjCAttribute
+    case number
+    case objCAttribute
+    case objCBlock
+    case otherNominalType
+    case outlinedAssignWithCopy
+    case outlinedAssignWithTake
+    case outlinedBridgedMethod
+    case outlinedConsume
+    case outlinedCopy
+    case outlinedDestroy
+    case outlinedInitializeWithCopy
+    case outlinedInitializeWithTake
+    case outlinedRelease
+    case outlinedRetain
+    case outlinedVariable
+    case owned
+    case owningAddressor
+    case owningMutableAddressor
+    case partialApplyForwarder
+    case partialApplyObjCForwarder
+    case postfixOperator
+    case prefixOperator
+    case privateDeclName
+    case propertyDescriptor
+    case protocolConformance
+    case protocolConformanceDescriptor
+    case protocolDescriptor
+    case protocolList
+    case protocolListWithAnyObject
+    case protocolListWithClass
+    case protocolRequirementsBaseDescriptor
+    case protocolWitness
+    case protocolWitnessTable
+    case protocolWitnessTableAccessor
+    case protocolWitnessTablePattern
+    case reabstractionThunk
+    case reabstractionThunkHelper
+    case readAccessor
+    case reflectionMetadataAssocTypeDescriptor
+    case reflectionMetadataBuiltinDescriptor
+    case reflectionMetadataFieldDescriptor
+    case reflectionMetadataSuperclassDescriptor
+    case relatedEntityDeclName
+    case resilientProtocolWitnessTable
+    case retroactiveConformance
+    case returnType
+    case setter
+    case shared
+    case silBoxImmutableField
+    case silBoxLayout
+    case silBoxMutableField
+    case silBoxType
+    case silBoxTypeWithLayout
+    case specializationPassID
+    case structure
+    case suffix
+    case sugaredOptional
+    case sugaredArray
+    case sugaredDictionary
+    case sugaredParen
+    case typeSymbolicReference
+    case thinFunctionType
+    case throwsAnnotation
+    case tuple
+    case tupleElement
+    case tupleElementName
+    case type
+    case typeAlias
+    case typeList
+    case typeMangling
+    case typeMetadata
+    case typeMetadataAccessFunction
+    case typeMetadataCompletionFunction
+    case typeMetadataInstantiationCache
+    case typeMetadataInstantiationFunction
+    case typeMetadataLazyCache
+    case typeMetadataSingletonInitializationCache
+    case uncurriedFunctionType
+    case unmanaged
+    case unowned
+    case unsafeAddressor
+    case unsafeMutableAddressor
+    case valueWitness
+    case valueWitnessTable
+    case variable
+    case variadicMarker
+    case vTableAttribute
+    case vTableThunk
+    case weak
+    case willSet
+    public static func == (a: Mockingbird.SwiftSymbol.Kind, b: Mockingbird.SwiftSymbol.Kind) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+}
+public enum SwiftSymbolParseError : Swift.Error {
+  case utf8ParseError
+  case unexpected(at: Swift.Int)
+  case matchFailed(wanted: Swift.String, at: Swift.Int)
+  case expectedInt(at: Swift.Int)
+  case endedPrematurely(count: Swift.Int, at: Swift.Int)
+  case searchFailed(wanted: Swift.String, after: Swift.Int)
+  case integerOverflow(at: Swift.Int)
+}
+public func sequence<DeclarationType, InvocationType, ReturnType>(of values: ReturnType...) -> Mockingbird.ImplementationProvider<DeclarationType, InvocationType, ReturnType> where DeclarationType : Mockingbird.Declaration
+public func sequence<DeclarationType, InvocationType, ReturnType>(of implementations: InvocationType...) -> Mockingbird.ImplementationProvider<DeclarationType, InvocationType, ReturnType> where DeclarationType : Mockingbird.Declaration
+public func loopingSequence<DeclarationType, InvocationType, ReturnType>(of values: ReturnType...) -> Mockingbird.ImplementationProvider<DeclarationType, InvocationType, ReturnType> where DeclarationType : Mockingbird.Declaration
+public func loopingSequence<DeclarationType, InvocationType, ReturnType>(of implementations: InvocationType...) -> Mockingbird.ImplementationProvider<DeclarationType, InvocationType, ReturnType> where DeclarationType : Mockingbird.Declaration
+public func finiteSequence<DeclarationType, InvocationType, ReturnType>(of values: ReturnType...) -> Mockingbird.ImplementationProvider<DeclarationType, InvocationType, ReturnType> where DeclarationType : Mockingbird.Declaration
+public func finiteSequence<DeclarationType, InvocationType, ReturnType>(of implementations: InvocationType...) -> Mockingbird.ImplementationProvider<DeclarationType, InvocationType, ReturnType> where DeclarationType : Mockingbird.Declaration
+public func lastSetValue<DeclarationType, InvocationType, ReturnType>(initial: ReturnType) -> Mockingbird.ImplementationProvider<DeclarationType, InvocationType, ReturnType> where DeclarationType : Mockingbird.PropertyGetterDeclaration
+public struct SourceLocation {
+}
+public struct CountMatcher {
+}
+public let never: Swift.Int
+public let once: Swift.Int
+public let twice: Swift.Int
+public func exactly(_ times: Swift.Int) -> Mockingbird.CountMatcher
+public func atLeast(_ times: Swift.Int) -> Mockingbird.CountMatcher
+public func atMost(_ times: Swift.Int) -> Mockingbird.CountMatcher
+public func between(_ range: Swift.Range<Swift.Int>) -> Mockingbird.CountMatcher
+extension CountMatcher {
+  public func or(_ countMatcher: Mockingbird.CountMatcher) -> Mockingbird.CountMatcher
+  public func or(_ times: Swift.Int) -> Mockingbird.CountMatcher
+  public func and(_ countMatcher: Mockingbird.CountMatcher) -> Mockingbird.CountMatcher
+  public func xor(_ countMatcher: Mockingbird.CountMatcher) -> Mockingbird.CountMatcher
+  public func xor(_ times: Swift.Int) -> Mockingbird.CountMatcher
+}
+public func not(_ countMatcher: Mockingbird.CountMatcher) -> Mockingbird.CountMatcher
+public func not(_ times: Swift.Int) -> Mockingbird.CountMatcher
+@available(*, unavailable, message: "No generated mock for this type which might be resolved by building the test target (⇧⌘U)")
+public func mock<T>(_ type: T.Type) -> T
+public protocol Mock {
+  var mockingContext: Mockingbird.MockingContext { get }
+  var stubbingContext: Mockingbird.StubbingContext { get }
+  var mockMetadata: Mockingbird.MockMetadata { get }
+  var sourceLocation: Mockingbird.SourceLocation? { get set }
+}
+@_hasMissingDesignatedInitializers public class StaticMock : Mockingbird.Mock {
+  final public let mockingContext: Mockingbird.MockingContext
+  final public let stubbingContext: Mockingbird.StubbingContext
+  final public let mockMetadata: Mockingbird.MockMetadata
+  public var sourceLocation: Mockingbird.SourceLocation? {
+    get
+    set
+  }
+  @objc deinit
+}
+public struct MockMetadata {
+}
+public struct Mockable<DeclarationType, InvocationType, ReturnType> where DeclarationType : Mockingbird.Declaration {
+}
+public protocol Declaration {
+}
+@_hasMissingDesignatedInitializers public class VariableDeclaration : Mockingbird.Declaration {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PropertyGetterDeclaration : Mockingbird.VariableDeclaration {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PropertySetterDeclaration : Mockingbird.VariableDeclaration {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class FunctionDeclaration : Mockingbird.Declaration {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ThrowingFunctionDeclaration : Mockingbird.FunctionDeclaration {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SubscriptDeclaration : Mockingbird.Declaration {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SubscriptGetterDeclaration : Mockingbird.SubscriptDeclaration {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SubscriptSetterDeclaration : Mockingbird.SubscriptDeclaration {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class MockingContext {
+  @objc deinit
+}
+public func useDefaultValues(from valueProvider: Mockingbird.ValueProvider, on mocks: [Mockingbird.Mock])
+public func useDefaultValues(from valueProvider: Mockingbird.ValueProvider, on mock: Mockingbird.Mock)
+extension Mock {
+  @discardableResult
+  public func useDefaultValues(from valueProvider: Mockingbird.ValueProvider) -> Self
+}
+public func given<DeclarationType, InvocationType, ReturnType>(_ declarations: Mockingbird.Mockable<DeclarationType, InvocationType, ReturnType>...) -> Mockingbird.StubbingManager<DeclarationType, InvocationType, ReturnType> where DeclarationType : Mockingbird.Declaration
+@_hasMissingDesignatedInitializers public class StubbingManager<DeclarationType, InvocationType, ReturnType> where DeclarationType : Mockingbird.Declaration {
+  public enum TransitionStrategy {
+    case after(_: Swift.Int)
+    case onFirstNil
+  }
+  @discardableResult
+  public func willReturn(_ value: ReturnType) -> Self
+  @discardableResult
+  public func willReturn(_ provider: Mockingbird.ImplementationProvider<DeclarationType, InvocationType, ReturnType>, transition: Mockingbird.StubbingManager<DeclarationType, InvocationType, ReturnType>.TransitionStrategy = .onFirstNil) -> Self
+  @discardableResult
+  public func will(_ implementation: InvocationType) -> Self
+  @objc deinit
+}
+extension StubbingManager where DeclarationType == Mockingbird.ThrowingFunctionDeclaration {
+  @discardableResult
+  public func willThrow(_ error: Swift.Error) -> Self
+  public func returning(_ type: ReturnType.Type = ReturnType.self) -> Self
+}
+extension StubbingManager where ReturnType == Swift.Void {
+  @discardableResult
+  public func willReturn() -> Self
+}
+infix operator ~> : DefaultPrecedence
+public func ~> <DeclarationType, InvocationType, ReturnType>(manager: Mockingbird.StubbingManager<DeclarationType, InvocationType, ReturnType>, implementation: @autoclosure @escaping () -> ReturnType) where DeclarationType : Mockingbird.Declaration
+public func ~> <DeclarationType, InvocationType, ReturnType>(manager: Mockingbird.StubbingManager<DeclarationType, InvocationType, ReturnType>, implementation: InvocationType) where DeclarationType : Mockingbird.Declaration
+public func ~> <DeclarationType, InvocationType, ReturnType>(manager: Mockingbird.StubbingManager<DeclarationType, InvocationType, ReturnType>, provider: Mockingbird.ImplementationProvider<DeclarationType, InvocationType, ReturnType>) where DeclarationType : Mockingbird.Declaration
+@_hasMissingDesignatedInitializers public class StubbingContext {
+  @objc deinit
+}
+extension Array : Mockingbird.Providable {
+  public static func createInstance() -> Swift.Array<Element>?
+}
+extension Set : Mockingbird.Providable {
+  public static func createInstance() -> Swift.Set<Element>?
+}
+extension Dictionary : Mockingbird.Providable {
+  public static func createInstance() -> Swift.Dictionary<Key, Value>?
+}
+extension ValueProvider {
+  public static let collectionsProvider: Mockingbird.ValueProvider
+}
+extension ValueProvider {
+  public static let primitivesProvider: Mockingbird.ValueProvider
+}
+extension Optional : Mockingbird.Providable {
+  public static func createInstance() -> Swift.Optional<Wrapped>?
+}
+extension ValueProvider {
+  public static let basicsProvider: Mockingbird.ValueProvider
+}
+extension ValueProvider {
+  public static let stringsProvider: Mockingbird.ValueProvider
+}
+extension ValueProvider {
+  public static let datesProvider: Mockingbird.ValueProvider
+}
+public struct ImplementationProvider<DeclarationType, InvocationType, ReturnType> where DeclarationType : Mockingbird.Declaration {
+  public init(implementationCreator: @escaping () -> Any?)
+}
+public func any<T>(_ type: T.Type = T.self, containing values: T.Element...) -> T where T : Swift.Collection
+public func any<K, V>(_ type: Swift.Dictionary<K, V>.Type = Dictionary<K, V>.self, containing values: V...) -> Swift.Dictionary<K, V> where K : Swift.Hashable
+public func any<K, V>(_ type: Swift.Dictionary<K, V>.Type = Dictionary<K, V>.self, keys: K...) -> Swift.Dictionary<K, V> where K : Swift.Hashable
+public func any<T>(_ type: T.Type = T.self, count countMatcher: Mockingbird.CountMatcher) -> T where T : Swift.Collection
+public func notEmpty<T>(_ type: T.Type = T.self) -> T where T : Swift.Collection
+public func around<T>(_ value: T, tolerance: T) -> T where T : Swift.FloatingPoint
+public protocol Providable {
+  static func createInstance() -> Self?
+}
+public struct ValueProvider {
+  public init()
+  public mutating func add(_ other: Mockingbird.ValueProvider)
+  public func adding(_ other: Mockingbird.ValueProvider) -> Mockingbird.ValueProvider
+  public static func + (lhs: Mockingbird.ValueProvider, rhs: Mockingbird.ValueProvider) -> Mockingbird.ValueProvider
+  public mutating func register<K, V>(_ value: V, for type: K.Type)
+  public mutating func registerType<T>(_ type: T.Type = T.self) where T : Mockingbird.Providable
+  public mutating func remove<T>(_ type: T.Type)
+  public mutating func remove<T>(_ type: T.Type = T.self) where T : Mockingbird.Providable
+  public static let standardProvider: Mockingbird.ValueProvider
+  public func provideValue<T>(for type: T.Type = T.self) -> T?
+  public func provideValue<T>(for type: T.Type = T.self) -> T? where T : Mockingbird.Providable
+}
+public func reset(_ mocks: Mockingbird.Mock...)
+public func clearInvocations(on mocks: Mockingbird.Mock...)
+public func clearStubs(on mocks: Mockingbird.Mock...)
+public func clearDefaultValues(on mocks: Mockingbird.Mock...)
+public func eventually(_ description: Swift.String? = nil, _ block: () -> Swift.Void) -> XCTest.XCTestExpectation
+@_hasMissingDesignatedInitializers public class NonEscapingClosure<ClosureType> {
+  @objc deinit
+}
+public func inOrder(with options: Mockingbird.OrderedVerificationOptions = [], file: Swift.StaticString = #file, line: Swift.UInt = #line, _ block: () -> Swift.Void)
+public struct OrderedVerificationOptions : Swift.OptionSet {
+  public let rawValue: Swift.Int
+  public init(rawValue: Swift.Int)
+  public static let noInvocationsBefore: Mockingbird.OrderedVerificationOptions
+  public static let noInvocationsAfter: Mockingbird.OrderedVerificationOptions
+  public static let onlyConsecutiveInvocations: Mockingbird.OrderedVerificationOptions
+  public typealias Element = Mockingbird.OrderedVerificationOptions
+  public typealias ArrayLiteralElement = Mockingbird.OrderedVerificationOptions
+  public typealias RawValue = Swift.Int
+}
+public func verify<DeclarationType, InvocationType, ReturnType>(_ declaration: Mockingbird.Mockable<DeclarationType, InvocationType, ReturnType>, file: Swift.StaticString = #file, line: Swift.UInt = #line) -> Mockingbird.VerificationManager<InvocationType, ReturnType> where DeclarationType : Mockingbird.Declaration
+public struct VerificationManager<InvocationType, ReturnType> {
+  public func wasCalled(_ countMatcher: Mockingbird.CountMatcher)
+  public func wasCalled(_ times: Swift.Int = once)
+  public func wasNeverCalled()
+  public func returning(_ type: ReturnType.Type = ReturnType.self) -> Mockingbird.VerificationManager<InvocationType, ReturnType>
+}
+public func any<T>(_ type: T.Type = T.self) -> T
+public func any<T>(_ type: T.Type = T.self, of objects: T...) -> T where T : Swift.Equatable
+public func any<T>(_ type: T.Type = T.self, of objects: T...) -> T where T : AnyObject
+public func any<T>(_ type: T.Type = T.self, where predicate: @escaping (T) -> Swift.Bool) -> T
+public func notNil<T>(_ type: T.Type = T.self) -> T
+public protocol TestFailer {
+  func fail(message: Swift.String, isFatal: Swift.Bool, file: Swift.StaticString, line: Swift.UInt)
+}
+public func swizzleTestFailer(_ newTestFailer: Mockingbird.TestFailer)
+public func MKBFail(_ message: Swift.String, isFatal: Swift.Bool = false, file: Swift.StaticString = #file, line: Swift.UInt = #line)
+extension Mockingbird.SwiftSymbol.Kind : Swift.Equatable {}
+extension Mockingbird.SwiftSymbol.Kind : Swift.Hashable {}
