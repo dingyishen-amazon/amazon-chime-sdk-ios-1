@@ -62,6 +62,7 @@ jobs:
       - name: Build and Test
         working-directory: ./AmazonChimeSDK
         run: |
+          export PATH=/usr/local/bin
           xcodebuild test -project AmazonChimeSDK.xcodeproj -scheme AmazonChimeSDK -destination 'platform=iOS Simulator,name=iPhone 11' -enableCodeCoverage YES build test
   #        mockingbird download starter-pack
   #        mockingbird install --sources AmazonChimeSDK --target AmazonChimeSDKPodsTests
