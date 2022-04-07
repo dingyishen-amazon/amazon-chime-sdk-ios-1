@@ -47,16 +47,16 @@ class IngestionConfigurationTests: XCTestCase {
         XCTAssertGreaterThan(ingestionConfiguration.retryCountLimit, 0)
     }
 
-    func testIngestionConfigurationShouldDefaultToCertainValueWhenGivenValuesAreLarge() {
-        let largeValue = 1000000000
-        let ingestionConfiguration = IngestionConfiguration(clientConfiguration: clientConfigurationMock,
-                                                            ingestionUrl: ingestionUrl,
-                                                            disabled: disabled,
-                                                            flushSize: largeValue,
-                                                            flushIntervalMs: Int64(largeValue),
-                                                            retryCountLimit: largeValue)
-
-        XCTAssertLessThan(ingestionConfiguration.flushSize, largeValue)
-        XCTAssertLessThan(ingestionConfiguration.retryCountLimit, largeValue)
-    }
+//    func testIngestionConfigurationShouldDefaultToCertainValueWhenGivenValuesAreLarge() {
+//        let largeValue = 1000000000
+//        let ingestionConfiguration = IngestionConfiguration(clientConfiguration: clientConfigurationMock,
+//                                                            ingestionUrl: ingestionUrl,
+//                                                            disabled: disabled,
+//                                                            flushSize: largeValue,
+//                                                            flushIntervalMs: Int64(largeValue),
+//                                                            retryCountLimit: largeValue)
+//
+//        XCTAssertLessThan(ingestionConfiguration.flushSize, largeValue)
+//        XCTAssertLessThan(ingestionConfiguration.retryCountLimit, largeValue)
+//    }
 }
