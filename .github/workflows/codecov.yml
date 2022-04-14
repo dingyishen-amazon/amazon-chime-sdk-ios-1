@@ -70,11 +70,12 @@ jobs:
             -project AmazonChimeSDK.xcodeproj \
             -scheme AmazonChimeSDK \
             -destination 'platform=iOS Simulator,name=iPhone 11' \
-            -skip-testing:"AmazonChimeSDKTests/SQLiteClientFileTests/testWriteShouldInsertMultipleItemsConcurrently" \
-            -skip-testing:"AmazonChimeSDKTests/SchedulerTests" \
-            -skip-testing:"AmazonChimeSDKTests/ConcurrentDictionaryTests" \
             -enableCodeCoverage YES \
             build test
+            
+#       -skip-testing:"AmazonChimeSDKTests/SQLiteClientFileTests/testWriteShouldInsertMultipleItemsConcurrently" \
+#       -skip-testing:"AmazonChimeSDKTests/SchedulerTests" \
+#       -skip-testing:"AmazonChimeSDKTests/ConcurrentDictionaryTests" \
 #          xcodebuild build -project AmazonChimeSDK.xcodeproj -scheme AmazonChimeSDK -destination 'platform=iOS Simulator,name=iPhone 11'
           
   #        mockingbird download starter-pack
