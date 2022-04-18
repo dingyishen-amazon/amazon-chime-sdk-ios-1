@@ -117,7 +117,7 @@ class SQLiteClientTests: XCTestCase {
             backgroundThreadEndedExpectation2.fulfill()
         }
 
-        wait(for: [backgroundThreadEndedExpectation1, backgroundThreadEndedExpectation2], timeout: 3)
+        wait(for: [backgroundThreadEndedExpectation1, backgroundThreadEndedExpectation2], timeout: 30)
 
         let result = sqliteDBClient?.query(statement: getQueryStatement(), params: nil)
 
