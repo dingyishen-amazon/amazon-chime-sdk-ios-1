@@ -87,7 +87,7 @@ class ConcurrentDictionaryTests: XCTestCase {
             mainThreadEndedExpectation.fulfill()
         }
 
-        wait(for: [backgroundThreadEndedExpectation, mainThreadEndedExpectation], timeout: 5)
+        wait(for: [backgroundThreadEndedExpectation, mainThreadEndedExpectation], timeout: 50)
         XCTAssertEqual(self.dict["?"], 2)
     }
 
