@@ -72,8 +72,9 @@ jobs:
             -destination 'platform=iOS Simulator,name=iPhone 11' \            
             -enableCodeCoverage YES \
             build test
-            
-# -skip-testing:"AmazonChimeSDKTests/SQLiteClientFileTests/testWriteShouldInsertMultipleItemsConcurrently" \
+   
+   
+#             -skip-testing:"AmazonChimeSDKTests/SQLiteClientFileTests/testWriteShouldInsertMultipleItemsConcurrently" \
 #             -skip-testing:"AmazonChimeSDKTests/SQLiteClientTests/testWriteShouldInsertMultipleItemsConcurrently" \
 #             -skip-testing:"AmazonChimeSDKTests/SchedulerTests" \      
 #       -skip-testing:"AmazonChimeSDKTests/ConcurrentDictionaryTests" \
