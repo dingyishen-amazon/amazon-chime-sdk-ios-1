@@ -16,7 +16,7 @@ class SchedulerTests: XCTestCase {
     private var callback = {}
 
     private let intervalMs = 1
-    private let testTimeoutSecs = 0.1
+    private let testTimeoutSecs = 0.5
     private let expectedCount = 5
     private let expectedTestDurationNanos: UInt64 = 5_000_000
 
