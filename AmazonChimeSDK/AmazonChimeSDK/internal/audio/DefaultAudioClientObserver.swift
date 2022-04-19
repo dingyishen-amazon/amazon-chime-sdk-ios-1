@@ -24,6 +24,7 @@ class DefaultAudioClientObserver: NSObject, AudioClientDelegate {
     private let logger: Logger
     private let eventAnalyticsController: EventAnalyticsController
     private let meetingStatsCollector: MeetingStatsCollector
+    private var primaryMeetingPromotionObserver: PrimaryMeetingPromotionObserver?
 
     private let audioLock: AudioLock
 
@@ -269,6 +270,34 @@ class DefaultAudioClientObserver: NSObject, AudioClientDelegate {
         }
     }
 
+    public func primaryMeetingEventReceived(
+        _ type: PrimaryMeetingEventTypeInternal,
+        status: PrimaryMeetingEventStatusInternal) {
+        let code: MeetingSessionStatusCode
+        switch status {
+        case PrimaryMeetingEventStatusInternal.Ok:
+            code = MeetingSessionStatusCode.ok
+        case PrimaryMeetingEventStatusInternal.CallAtCapacity:
+            code = MeetingSessionStatusCode.audioCallAtCapacity
+        case PrimaryMeetingEventStatusInternal.AuthenticationFailed:
+            code = MeetingSessionStatusCode.audioAuthenticationRejected
+        default:
+            code = MeetingSessionStatusCode.unknown
+        }
+
+        switch type {
+        case PrimaryMeetingEventTypeInternal.joinAck:
+            self.primaryMeetingPromotionObserver?
+                .didPromoteToPrimaryMeeting(status: MeetingSessionStatus(statusCode: code))
+        case PrimaryMeetingEventTypeInternal.leave:
+            self.primaryMeetingPromotionObserver?
+                .didDemoteFromPrimaryMeeting(status: MeetingSessionStatus(statusCode: code))
+            self.primaryMeetingPromotionObserver = nil
+        default:
+            self.logger.error(msg: "Unexpected primary meeting event type \(type)")
+        }
+    }
+
     // Create AttendeeInfo based on AttendeeUpdate, fill up external ID for local attendee
     private func createAttendeeInfo(attendeeUpdate: AttendeeUpdate) -> AttendeeInfo {
         var externalUserId: String
@@ -294,6 +323,10 @@ class DefaultAudioClientObserver: NSObject, AudioClientDelegate {
             notifyAudioClientObserver { (observer: AudioVideoObserver) in
                 observer.audioSessionDidStart(reconnecting: true)
             }
+            // We will not be promoted on reconnection
+            self.primaryMeetingPromotionObserver?
+                .didDemoteFromPrimaryMeeting(status: MeetingSessionStatus.init(statusCode: MeetingSessionStatusCode.audioInternalServerError))
+            self.primaryMeetingPromotionObserver = nil
         case .finishConnecting:
             switch (newAudioStatus, currentAudioStatus) {
             case (.ok, .networkBecomePoor):
@@ -422,5 +455,9 @@ extension DefaultAudioClientObserver: AudioClientObserver {
 
     func unsubscribeFromTranscriptEvent(observer: TranscriptEventObserver) {
         transcriptEventObservers.remove(observer)
+    }
+
+    func setPrimaryMeetingPromotionObserver(observer: PrimaryMeetingPromotionObserver) {
+        primaryMeetingPromotionObserver = observer
     }
 }

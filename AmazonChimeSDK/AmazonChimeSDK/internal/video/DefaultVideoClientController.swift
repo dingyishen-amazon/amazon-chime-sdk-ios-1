@@ -23,6 +23,7 @@ class DefaultVideoClientController: NSObject {
     // We have designed the SDK API to allow using `RemoteVideoSource` as a key in a map, e.g. for  `updateVideoSourceSubscription`.
     // Therefore we need to map to a consistent set of sources from the internal sources, by using attendeeId as a unique identifier.
     var cachedRemoteVideoSources = ConcurrentMutableSet()
+    var primaryMeetingPromotionObserver: PrimaryMeetingPromotionObserver?
 
     private let configuration: MeetingSessionConfiguration
     private let defaultVideoClient: VideoClientProtocol
@@ -190,6 +191,11 @@ extension DefaultVideoClientController: VideoClientDelegate {
         ObserverUtils.forEach(observers: videoObservers) { (observer: AudioVideoObserver) in
             observer.videoSessionDidStopWithStatus(sessionStatus: MeetingSessionStatus(statusCode: .ok))
         }
+
+        // We will not be promoted on reconnection
+        self.primaryMeetingPromotionObserver?
+            .didDemoteFromPrimaryMeeting(status: MeetingSessionStatus.init(statusCode: MeetingSessionStatusCode.audioInternalServerError))
+        self.primaryMeetingPromotionObserver = nil
     }
 
     public func videoClient(_ client: VideoClient?, cameraSendIsAvailable available: Bool) {
@@ -284,6 +290,37 @@ extension DefaultVideoClientController: VideoClientDelegate {
 
     public func videoClientTurnURIsReceived(_ uris: [String]) -> [String] {
         return uris.map(self.configuration.urlRewriter)
+    }
+
+    public func videoClientDidPromote(toPrimaryMeeting status: video_client_status_t) {
+        let code: MeetingSessionStatusCode
+        switch status {
+        case VIDEO_CLIENT_OK:
+            code = MeetingSessionStatusCode.ok
+        case VIDEO_CLIENT_ERR_PRIMARY_MEETING_JOIN_AT_CAPACITY:
+            code = MeetingSessionStatusCode.audioCallAtCapacity
+        case VIDEO_CLIENT_ERR_PRIMARY_MEETING_JOIN_AUTHENTICATION_FAILED:
+            code = MeetingSessionStatusCode.audioAuthenticationRejected
+        default:
+            code = MeetingSessionStatusCode.unknown
+        }
+        self.primaryMeetingPromotionObserver?
+            .didPromoteToPrimaryMeeting(status: MeetingSessionStatus.init(statusCode: code))
+    }
+
+    public func videoClientDidDemote(fromPrimaryMeeting status: video_client_status_t) {
+        let code: MeetingSessionStatusCode
+        switch status {
+        case VIDEO_CLIENT_OK:
+            code = MeetingSessionStatusCode.ok
+        case VIDEO_CLIENT_ERR_PRIMARY_MEETING_JOIN_AUTHENTICATION_FAILED:
+            code = MeetingSessionStatusCode.audioAuthenticationRejected
+        default:
+            code = MeetingSessionStatusCode.unknown
+        }
+        self.primaryMeetingPromotionObserver?
+            .didDemoteFromPrimaryMeeting(status: MeetingSessionStatus.init(statusCode: code))
+        self.primaryMeetingPromotionObserver = nil
     }
 }
 
@@ -493,5 +530,26 @@ extension DefaultVideoClientController: VideoClientController {
         } else {
             throw SendDataMessageError.invalidData
         }
+    }
+
+    func promoteToPrimaryMeeting(credentials: MeetingSessionCredentials,
+                                  observer: PrimaryMeetingPromotionObserver) {
+        guard videoClientState == .started else {
+            logger.error(msg: "Cannot join primary meeting because videoClientState=\(videoClientState)")
+            observer.didPromoteToPrimaryMeeting(status: MeetingSessionStatus(statusCode: MeetingSessionStatusCode.audioServiceUnavailable))
+            return
+        }
+        primaryMeetingPromotionObserver = observer
+        videoClient?.promotePrimaryMeeting(credentials.attendeeId,
+                                             externalUserId: credentials.externalUserId,
+                                             joinToken: credentials.joinToken)
+    }
+
+    func demoteFromPrimaryMeeting() {
+        guard videoClientState == .started else {
+            logger.error(msg: "Cannot leave primary meeting because videoClientState=\(videoClientState)")
+            return
+        }
+        videoClient?.demoteFromPrimaryMeeting()
     }
 }
