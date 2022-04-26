@@ -1,0 +1,4 @@
+framework module Mockingbird {
+  header "Mockingbird-Swift.h"
+  requires objc
+}
