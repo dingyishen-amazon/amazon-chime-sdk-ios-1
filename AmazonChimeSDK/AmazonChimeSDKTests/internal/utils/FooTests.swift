@@ -16,9 +16,9 @@ class FooTests: XCTestCase {
     override func setUp() {
         super.setUp()
     }
-
+    
     func testFoo() {
-        XCTAssertEqual(foo.foo(), true)
+        XCTAssertTrue(foo.foo())
     }
 
 }
