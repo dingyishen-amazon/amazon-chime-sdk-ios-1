@@ -173,7 +173,6 @@
 		6AE9B5AF258ACBAE00DF7FF7 /* ReplayKitSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9B5AE258ACBAE00DF7FF7 /* ReplayKitSource.swift */; };
 		6AE9B5B3258ACBDA00DF7FF7 /* VideoFrameResender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9B5B2258ACBDA00DF7FF7 /* VideoFrameResender.swift */; };
 		714A0EB328187CB40048CB13 /* Foo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A0EB228187CB40048CB13 /* Foo.swift */; };
-		714A0EB728187DA90048CB13 /* FooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A0EB628187DA90048CB13 /* FooTests.swift */; };
 		7C0D1BEB241ACC7B00280031 /* IntervalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D1BCB241ACC7B00280031 /* IntervalScheduler.swift */; };
 		7C0D1BEC241ACC7B00280031 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D1BCC241ACC7B00280031 /* Scheduler.swift */; };
 		7C0D1BED241ACC7B00280031 /* DefaultActiveSpeakerPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D1BE6241ACC7B00280031 /* DefaultActiveSpeakerPolicy.swift */; };
@@ -451,7 +450,6 @@
 		6AE9B5AE258ACBAE00DF7FF7 /* ReplayKitSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplayKitSource.swift; sourceTree = "<group>"; };
 		6AE9B5B2258ACBDA00DF7FF7 /* VideoFrameResender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFrameResender.swift; sourceTree = "<group>"; };
 		714A0EB228187CB40048CB13 /* Foo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foo.swift; sourceTree = "<group>"; };
-		714A0EB628187DA90048CB13 /* FooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooTests.swift; sourceTree = "<group>"; };
 		7C0D1BCB241ACC7B00280031 /* IntervalScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalScheduler.swift; sourceTree = "<group>"; };
 		7C0D1BCC241ACC7B00280031 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		7C0D1BE6241ACC7B00280031 /* DefaultActiveSpeakerPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultActiveSpeakerPolicy.swift; sourceTree = "<group>"; };
@@ -1270,7 +1268,6 @@
 				00212707260BC31600ACDC62 /* SQLiteClientTests.swift */,
 				00684537260D1F1E002AB143 /* SQLiteClientFileTests.swift */,
 				00F20F0E2620C55D00C470E9 /* HttpUtilsTests.swift */,
-				714A0EB628187DA90048CB13 /* FooTests.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1721,7 +1718,6 @@
 				5AE1323323EA972C00BF5997 /* MeetingSessionURLsTests.swift in Sources */,
 				002C1FBD2642641A00C9B919 /* DefaultEventBufferTests.swift in Sources */,
 				C6DA0B2624F7118000028F2B /* DefaultAudioClientControllerTests.swift in Sources */,
-				714A0EB728187DA90048CB13 /* FooTests.swift in Sources */,
 				0033D34D263B2E5F00D8FA0C /* DefaultEventReporterTests.swift in Sources */,
 				5AE76F2924203AB8009C41FD /* ObservableMetricTests.swift in Sources */,
 				C6DA0B6224F961AA00028F2B /* DefaultAudioVideoControllerTests.swift in Sources */,
