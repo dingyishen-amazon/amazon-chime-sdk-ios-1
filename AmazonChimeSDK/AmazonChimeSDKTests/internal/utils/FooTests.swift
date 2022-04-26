@@ -11,12 +11,14 @@ import XCTest
 
 class FooTests: XCTestCase {
     
+    private var foo: Foo!
+    
     override func setUp() {
         super.setUp()
     }
 
     func testFoo() {
-        XCTAssertEqual(foo(), true)
+        XCTAssertEqual(foo.foo(), true)
     }
 
 }
