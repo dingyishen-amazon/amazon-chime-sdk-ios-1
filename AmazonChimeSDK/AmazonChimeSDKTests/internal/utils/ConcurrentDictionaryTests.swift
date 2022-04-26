@@ -67,29 +67,29 @@ class ConcurrentDictionaryTests: XCTestCase {
         XCTAssertEqual(dictCopy["1+1="], 2)
     }
 
-//    func testThreadSafety() {
-//        dict["?"] = 0
-//        let backgroundThreadEndedExpectation = XCTestExpectation(
-//            description: "The background thread was ended")
-//        let mainThreadEndedExpectation = XCTestExpectation(
-//            description: "The main thread was ended")
-//
-//        DispatchQueue.global(qos: .userInteractive).async {
-//            self.dict.forEach { _ in
-//                sleep(2)
-//                self.dict["?"] = 1
-//            }
-//            backgroundThreadEndedExpectation.fulfill()
-//        }
-//        DispatchQueue.main.async {
-//            sleep(1)
-//            self.dict["?"] = 2
-//            mainThreadEndedExpectation.fulfill()
-//        }
-//
-//        wait(for: [backgroundThreadEndedExpectation, mainThreadEndedExpectation], timeout: 5)
-//        XCTAssertEqual(self.dict["?"], 2)
-//    }
+    func testThreadSafety() {
+        dict["?"] = 0
+        let backgroundThreadEndedExpectation = XCTestExpectation(
+            description: "The background thread was ended")
+        let mainThreadEndedExpectation = XCTestExpectation(
+            description: "The main thread was ended")
+
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.dict.forEach { _ in
+                sleep(2)
+                self.dict["?"] = 1
+            }
+            backgroundThreadEndedExpectation.fulfill()
+        }
+        DispatchQueue.main.async {
+            sleep(1)
+            self.dict["?"] = 2
+            mainThreadEndedExpectation.fulfill()
+        }
+
+        wait(for: [backgroundThreadEndedExpectation, mainThreadEndedExpectation], timeout: 5)
+        XCTAssertEqual(self.dict["?"], 2)
+    }
 
     func testThreadSafetyShouldFailForNormalDict() {
         var normalDict = ["?": 0]
