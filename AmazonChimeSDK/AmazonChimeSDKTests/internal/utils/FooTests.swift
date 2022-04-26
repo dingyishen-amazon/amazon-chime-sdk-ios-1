@@ -15,6 +15,7 @@ class FooTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        foo = Foo()
     }
     
     func testFoo() {
