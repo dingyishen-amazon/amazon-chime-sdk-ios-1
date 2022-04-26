@@ -267,7 +267,6 @@
 		F86CB7412411B9A6004FD82F /* exported_symbols in Resources */ = {isa = PBXBuildFile; fileRef = F86CB7402411B9A6004FD82F /* exported_symbols */; };
 		F8C0145E23F1D50E0083D478 /* VideoClientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0145D23F1D50E0083D478 /* VideoClientController.swift */; };
 		F8E42DEE247F9464004C8400 /* ConcurrentDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E42DED247F9464004C8400 /* ConcurrentDictionary.swift */; };
-		F8E42DF0247FD86B004C8400 /* ConcurrentDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E42DEF247FD86B004C8400 /* ConcurrentDictionaryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -544,7 +543,6 @@
 		F86CB7402411B9A6004FD82F /* exported_symbols */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exported_symbols; sourceTree = "<group>"; };
 		F8C0145D23F1D50E0083D478 /* VideoClientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoClientController.swift; sourceTree = "<group>"; };
 		F8E42DED247F9464004C8400 /* ConcurrentDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentDictionary.swift; sourceTree = "<group>"; };
-		F8E42DEF247FD86B004C8400 /* ConcurrentDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentDictionaryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1259,7 +1257,6 @@
 			isa = PBXGroup;
 			children = (
 				C60D5595246514B000C2A278 /* ConvertersTests.swift */,
-				F8E42DEF247FD86B004C8400 /* ConcurrentDictionaryTests.swift */,
 				C494800524855B4700A41FF8 /* ConcurrentMutableSetTests.swift */,
 				5A16C0042405E83000ADAE26 /* DictionaryExtensionTests.swift */,
 				00212707260BC31600ACDC62 /* SQLiteClientTests.swift */,
@@ -1732,7 +1729,6 @@
 				5AF7E00E245B6E86006C7C86 /* VersioningTests.swift in Sources */,
 				00230766263201EC0074947E /* SQLiteDatabaseManagerTests.swift in Sources */,
 				5A6F818E24637BA30031AE97 /* VideoClientStateTests.swift in Sources */,
-				F8E42DF0247FD86B004C8400 /* ConcurrentDictionaryTests.swift in Sources */,
 				006894F8246B481D00611C75 /* AttendeeStatusTest.swift in Sources */,
 				5AE76F2D24203AEF009C41FD /* VideoPauseStateTests.swift in Sources */,
 				C4EDDAAC253F46FF0028264A /* VideoCaptureFormatTests.swift in Sources */,
