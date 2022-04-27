@@ -172,6 +172,7 @@
 		6AB4C7A023F723030038CD4B /* ClientMetricsCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4C79F23F723030038CD4B /* ClientMetricsCollector.swift */; };
 		6AE9B5AF258ACBAE00DF7FF7 /* ReplayKitSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9B5AE258ACBAE00DF7FF7 /* ReplayKitSource.swift */; };
 		6AE9B5B3258ACBDA00DF7FF7 /* VideoFrameResender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE9B5B2258ACBDA00DF7FF7 /* VideoFrameResender.swift */; };
+		714A0EC32819CEF70048CB13 /* Foo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A0EC22819CEF70048CB13 /* Foo.swift */; };
 		7C0D1BEB241ACC7B00280031 /* IntervalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D1BCB241ACC7B00280031 /* IntervalScheduler.swift */; };
 		7C0D1BEC241ACC7B00280031 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D1BCC241ACC7B00280031 /* Scheduler.swift */; };
 		7C0D1BED241ACC7B00280031 /* DefaultActiveSpeakerPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D1BE6241ACC7B00280031 /* DefaultActiveSpeakerPolicy.swift */; };
@@ -448,6 +449,7 @@
 		6AB4C79F23F723030038CD4B /* ClientMetricsCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMetricsCollector.swift; sourceTree = "<group>"; };
 		6AE9B5AE258ACBAE00DF7FF7 /* ReplayKitSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplayKitSource.swift; sourceTree = "<group>"; };
 		6AE9B5B2258ACBDA00DF7FF7 /* VideoFrameResender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFrameResender.swift; sourceTree = "<group>"; };
+		714A0EC22819CEF70048CB13 /* Foo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foo.swift; sourceTree = "<group>"; };
 		7C0D1BCB241ACC7B00280031 /* IntervalScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalScheduler.swift; sourceTree = "<group>"; };
 		7C0D1BCC241ACC7B00280031 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		7C0D1BE6241ACC7B00280031 /* DefaultActiveSpeakerPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultActiveSpeakerPolicy.swift; sourceTree = "<group>"; };
@@ -708,6 +710,7 @@
 				B418164624B7EDA800FA62BF /* SendDataMessageError.swift */,
 				C4643F0525784EEB0085D51E /* DefaultModality.swift */,
 				C4643F0B2578776E0085D51E /* ModalityType.swift */,
+				714A0EC22819CEF70048CB13 /* Foo.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1568,6 +1571,7 @@
 				C4A6906E255B0E5500F28BC2 /* ContentShareSource.swift in Sources */,
 				002307522630C3390074947E /* SQLiteDatabaseManager.swift in Sources */,
 				C4A69086255B0F1D00F28BC2 /* InAppScreenCaptureSource.swift in Sources */,
+				714A0EC32819CEF70048CB13 /* Foo.swift in Sources */,
 				002C1FA4264128CE00C9B919 /* MeetingEventClientConfiguration.swift in Sources */,
 				C67E9B7B26F50D8E0084C9B4 /* TranscriptAlternative.swift in Sources */,
 				5A16BFEF2405E6A500ADAE26 /* DictionaryExtension.swift in Sources */,
